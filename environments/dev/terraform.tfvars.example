@@ -1,0 +1,26 @@
+# Copy this file to terraform.tfvars (git-ignored) and adjust as needed.
+# No real secrets belong here - just plain configuration values.
+
+aws_region   = "eu-west-2"
+environment  = "dev"
+project_name = "aws-terraform-infrastructure"
+owner        = "platform-team"
+
+vpc_cidr              = "10.0.0.0/16"
+az_count              = 2
+public_subnet_cidrs   = ["10.0.0.0/24", "10.0.1.0/24"]
+private_subnet_cidrs  = ["10.0.10.0/24", "10.0.11.0/24"]
+enable_nat_gateway    = true
+single_nat_gateway    = true
+
+# Replace with your office/VPN CIDR - never leave this as 0.0.0.0/0.
+allowed_ssh_cidr         = "203.0.113.0/24"
+allow_public_http_https = true
+database_port            = 5432
+
+instance_type    = "t3.micro"
+key_name          = null
+root_volume_size = 20
+
+ecr_repository_arns       = []
+cloudwatch_log_group_arns = []

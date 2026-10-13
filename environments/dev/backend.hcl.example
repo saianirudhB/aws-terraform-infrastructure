@@ -1,0 +1,13 @@
+# Copy this file to backend.hcl (git-ignored) and fill in the real values,
+# then run:
+#
+#   terraform init -backend-config=backend.hcl
+#
+# bucket and dynamodb_table must already exist - created once by the
+# standalone config in ../../bootstrap. See the root README's
+# "Remote state & locking" section.
+
+bucket         = "my-org-aws-terraform-infrastructure-state"
+key            = "environments/dev/terraform.tfstate"
+region         = "eu-west-2"
+dynamodb_table = "my-org-terraform-locks"
